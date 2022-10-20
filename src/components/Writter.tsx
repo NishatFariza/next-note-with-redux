@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
-const writter = () => {
+const Writter = () => {
+
+
+  const [title, setTitle] = useState("");
+  const [content, seContent] = useState("")
+  const [color, setColor] = useState("#ffe9ee");
+
   return (
     <div className="contextbox">
       <input type="text" placeholder="Title" />
@@ -19,4 +25,4 @@ const writter = () => {
   );
 };
 
-export default writter;
+export default Writter;
