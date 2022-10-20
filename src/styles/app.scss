@@ -7,11 +7,11 @@
 $radius: 20px;
 
 @mixin gradient {
-    background: #fc00ff;
+    background: #8d348f;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #00dbde, #fc00ff);
+    background: -webkit-linear-gradient(to right, #02b0b3, #8d348f);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #00dbde, #fc00ff);
+    background: linear-gradient(to right, #02b0b3, #8d348f);
 }
 
 button {
