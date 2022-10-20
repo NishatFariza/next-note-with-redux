@@ -3,7 +3,7 @@ import Filtter from "../components/Filtters";
 import Note from "../components/Note";
 import Writter from "../components/Writter";
 import { NoteModel } from "../models/Note.model";
-import Notes from "./store/notes";
+import Notes from "../store/notes";
 
 // "#d8e2dc"
 // "#ffe5d9"

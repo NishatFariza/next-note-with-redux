@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { STATUS_CODES } from "http";
-import { NoteModel } from "../../models/Note.model";
+import { NoteModel } from "../models/Note.model";
 
 interface NoteState{
     notes: NoteModel[];

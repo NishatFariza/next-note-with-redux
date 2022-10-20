@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { removeNote } from "../pages/store/notes";
+import { removeNote } from "../store/notes";
 
 interface Props {
   id: string;
