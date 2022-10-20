@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { STATUS_CODES } from "http";
 import { NoteModel } from "../../models/Note.model";
 
 interface NoteState{
@@ -51,9 +52,12 @@ const noteSlice = createSlice({
     name: "notes",
     initialState,
     reducers: {
-        
+        removeNote(state, action: PayloadAction<{ id: string }>) {
+            state.notes = state.notes.filter((note) => note.id !== action.payload.id)
+        }
     }
 })
 
+export const { removeNote } = noteSlice.actions;
 
 export default noteSlice.reducer;
