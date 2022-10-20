@@ -1,16 +1,18 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { removeNote } from "../pages/store/notes";
 
 interface Props {
+  id: string;
   title: string;
   content: string;
   color: string;
   createAt: string;
 }
 
-const Note: React.FC<Props> = ({ title, content, color, createAt }) => {
+const Note: React.FC<Props> = ({ title, content, color, createAt, id }) => {
+  const dispatch = useDispatch();
 
-
-  
   return (
     <div className="note" style={{ backgroundColor: color }}>
       <div>
@@ -19,7 +21,12 @@ const Note: React.FC<Props> = ({ title, content, color, createAt }) => {
       </div>
       <p className="time">{createAt}</p>
       <div className="buttons">
-        <button className="delete">&times;</button>
+        <button
+          onClick={() => dispatch(removeNote({ id: id }))}
+          className="delete"
+        >
+          &times;
+        </button>
       </div>
     </div>
   );

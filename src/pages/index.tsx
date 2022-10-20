@@ -23,7 +23,14 @@ const IndexPage = () => {
       <Filtter />
       <div className="notes">
         {notes.map((note) => (
-          <Note key={note.id} title={note.title} content={note.content} color={note.color} createAt={note.createAt} />
+          <Note
+            key={note.id}
+            title={note.title}
+            content={note.content}
+            color={note.color}
+            createAt={note.createAt}
+            id={note.id}
+          />
         ))}
 
         {/* <Note /> */}
