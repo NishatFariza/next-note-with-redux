@@ -1,18 +1,22 @@
 import React from "react";
 
-const Note = ({ bgColor = "#fff" }) => {
+
+interface Props{
+  title: string;
+  content: string;
+  color: string;
+  createAt: string;
+}
+
+
+const Note: React.FC<Props> = ({ title, content, color, createAt }) => {
   return (
-    <div className="note" style={{ backgroundColor: bgColor }}>
+    <div className="note" style={{ backgroundColor: color }}>
       <div>
-        <h3 className="title">Lorem ipsum dolor sit amet.</h3>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto
-          dolorem ea fugiat ad maiores distinctio impedit dignissimos possimus
-          blanditiis veritatis eligendi earum dolorum commodi quasi quam a,
-          incidunt illo. Illum.
-        </p>
+        <h3 className="title">{ title}</h3>
+        <p>{ content}</p>
       </div>
-      <p className="time">5 minutes ago</p>
+      <p className="time">{ createAt}</p>
       <div className="buttons">
         <button className="delete">&times;</button>
       </div>
