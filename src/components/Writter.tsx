@@ -1,23 +1,33 @@
 import React, { useState } from "react";
 
 const Writter = () => {
-
-
   const [title, setTitle] = useState("");
-  const [content, seContent] = useState("")
+  const [content, seContent] = useState("");
   const [color, setColor] = useState("#ffe9ee");
 
   return (
     <div className="contextbox">
-      <input type="text" placeholder="Title" />
-      <textarea rows={8} placeholder="Description" />
+      <input
+        type="text"
+        placeholder="Title"
+        onChange={(e) => {
+          setTitle(e.currentTarget.value);
+        }}
+      />
+      <textarea
+        rows={8}
+        placeholder="Description"
+        onChange={(e) => {
+          seContent(e.currentTarget.value);
+        }}
+      />
       <div className="controls">
         <div className="colors">
-          <span className="c1" data-note-color="#D8E2DC" />
-          <span className="c2" data-note-color="#FFE5D9" />
-          <span className="c3" data-note-color="#FBFAF0" />
-          <span className="c4" data-note-color="#FFE9EE" />
-          <span className="c5" data-note-color="#FFDDE4" />
+          <span className="c1" onClick={() => setColor("#D8E2DC")} />
+          <span className="c2" onClick={() => setColor("#FFE5D9")} />
+          <span className="c3" onClick={() => setColor("#FBFAF0")} />
+          <span className="c4" onClick={() => setColor("#FFE9EE")} />
+          <span className="c5" onClick={() => setColor("#FFDDE4")} />
         </div>
         <button>Add</button>
       </div>
