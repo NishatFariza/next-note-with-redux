@@ -5,7 +5,7 @@ import { changeFilterMode } from "../store/notes";
 
 const Filters = () => {
   const dispatch = useDispatch();
-  const allCount = useSelector((state: any) => state.notes.count as number);
+  const allCount = useSelector((state: any) => state.notes.notes.length as number);
 
 
   const color1Count = useSelector(
@@ -43,31 +43,31 @@ const Filters = () => {
         onClick={() => dispatch(changeFilterMode({ filterMode: "#D8E2DC" }))}
         style={{ backgroundColor: "#D8E2DC" }}
       >
-        4
+        {color1Count}
       </button>
       <button
         onClick={() => dispatch(changeFilterMode({ filterMode: "#FFE5D9" }))}
         style={{ backgroundColor: "#FFE5D9" }}
       >
-        4
+        {color2Count}
       </button>
       <button
         onClick={() => dispatch(changeFilterMode({ filterMode: "#FBFAF0" }))}
         style={{ backgroundColor: "#FBFAF0" }}
       >
-        4
+        {color3Count}
       </button>
       <button
         onClick={() => dispatch(changeFilterMode({ filterMode: "#FFE9EE" }))}
         style={{ backgroundColor: "#FFE9EE" }}
       >
-        4
+        {color4Count}
       </button>
       <button
         onClick={() => dispatch(changeFilterMode({ filterMode: "#FFDDE4" }))}
         style={{ backgroundColor: "#FFDDE4" }}
       >
-        4
+        {color5Count}
       </button>
     </div>
   );
