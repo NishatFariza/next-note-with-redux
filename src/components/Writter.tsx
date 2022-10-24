@@ -22,7 +22,7 @@ const Writter = () => {
     
     setColor("");
     setTitle("");
-    setContent
+    setContent("");
 
   }
 
