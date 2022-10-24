@@ -13,7 +13,8 @@ import Notes from "../store/notes";
 
 const IndexPage = () => {
   const notes = useSelector((state: any) => state.notes.notes as NoteModel[]);
-
+  const filterMode = useSelector((state: any) => state.notes.filterMode as string);
+  
   return (
     <div className="app">
       <div className="header">
@@ -22,7 +23,8 @@ const IndexPage = () => {
       <Writter />
       <Filtter />
       <div className="notes">
-        {notes.map((note) => (
+        {notes.filter((note) => filterMode =="all" || note.color == filterMode)
+          .map((note) => (
           <Note
             key={note.id}
             title={note.title}

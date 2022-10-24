@@ -1,14 +1,43 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { NoteModel } from "../models/Note.model";
 import { changeFilterMode } from "../store/notes";
 
 const Filters = () => {
   const dispatch = useDispatch();
+  const allCount = useSelector((state: any) => state.notes.count as number);
+
+
+  const color1Count = useSelector(
+    (state: any) =>
+      state.notes.notes.filter((note: NoteModel) => (note.color == "#D8E2DC"))
+        .length
+  );
+  const color2Count = useSelector(
+    (state: any) =>
+      state.notes.notes.filter((note: NoteModel) => (note.color == "#FFE5D9"))
+        .length
+  );
+  const color3Count = useSelector(
+    (state: any) =>
+      state.notes.notes.filter((note: NoteModel) => (note.color == "#FBFAF0"))
+        .length
+  );
+  const color4Count = useSelector(
+    (state: any) =>
+      state.notes.notes.filter((note: NoteModel) => (note.color == "#FFE9EE"))
+        .length
+  );
+  const color5Count = useSelector(
+    (state: any) =>
+      state.notes.notes.filter((note: NoteModel) => (note.color == "#FFDDE4"))
+        .length
+  );
 
   return (
     <div className="filter">
       <button onClick={() => dispatch(changeFilterMode({ filterMode: "all" }))}>
-        All (8)
+        All ({allCount})
       </button>
       <button
         onClick={() => dispatch(changeFilterMode({ filterMode: "#D8E2DC" }))}
